@@ -1,9 +1,16 @@
+// const express = require('express')
+// const axios = require('axios')
+// require('dotenv').config();
+// const PORT = process.env.PORT || 5000
+// const NYT_API_BASE = 'http://api.nytimes.com/svc/topstories/v2/'
+// const NYT_API_KEY =  ENV["NYT_API_KEY"]//process.env.NYT_API_KEY
+
 const express = require('express')
 const axios = require('axios')
-
+require('dotenv').load();
 const PORT = process.env.PORT || 5000
 const NYT_API_BASE = 'http://api.nytimes.com/svc/topstories/v2/'
-const NYT_API_KEY = process.env.NYT_API_KEY
+const NYT_API_KEY =  process.env.NYT_API_KEY
 
 const app = express()
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
