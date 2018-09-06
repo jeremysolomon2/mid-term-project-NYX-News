@@ -1,29 +1,42 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Form from './components/Form'
 import ArtsFull from './components/ArtsFull'
 import ArtsTop from './components/ArtsTop'
 import BusinessFull from './components/BusinessFull'
 import BusinessTop from './components/BusinessTop'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-import ArtsFull from './components/ArtsFull'
-
+import FashionFull from './components/FashionFull'
+import FashionTop from './components/FashionTop'
+import HealthFull from './components/HealthFull'
+import HealthTop from './components/HealthTop'
+import PoliticsFull from './components/PoliticsFull'
+import PoliticsTop from './components/PoliticsTop'
+import ScienceFull from './components/ScienceFull'
+import ScienceTop from './components/ScienceTop'
+import SportsFull from './components/SportsFull'
+import SportsTop from './components/SportsTop'
+import TechnologyFull from './components/TechnologyFull'
+import TechnologyTop from './components/TechnologyTop'
+import TravelFull from './components/TravelFull'
+import TravelTop from './components/TravelTop'
+import WorldFull from './components/WorldFull'
+import WorldTop from './components/WorldTop'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      sectionHealth: {},
-      sectionTravel: {},
-      sectionSports: {},
+      picks: [],
+      sectionHealth: [],
+      sectionTravel: [],
+      sectionSports: [],
+      sectionHealth: [],
+      sectionTravel: [],
+      sectionSports: [],
+      sectionHealth: [],
+      sectionTravel: [],
+      sectionSports: [],
+      sectionHealth: [],
     }
     this.getNews = this.getNews.bind(this);
   }
@@ -47,11 +60,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ul>
+      <Form />
+        {/* <ul>
           <li onClick={this.getNews}>
           Hello World
           </li>
-        </ul>
+        </ul> */}
       </div>
     );
   }
