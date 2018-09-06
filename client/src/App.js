@@ -1,71 +1,109 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Form from './components/Form'
-import ArtsFull from './components/ArtsFull'
-import ArtsTop from './components/ArtsTop'
-import BusinessFull from './components/BusinessFull'
-import BusinessTop from './components/BusinessTop'
-import FashionFull from './components/FashionFull'
-import FashionTop from './components/FashionTop'
-import HealthFull from './components/HealthFull'
-import HealthTop from './components/HealthTop'
-import PoliticsFull from './components/PoliticsFull'
-import PoliticsTop from './components/PoliticsTop'
-import ScienceFull from './components/ScienceFull'
-import ScienceTop from './components/ScienceTop'
-import SportsFull from './components/SportsFull'
-import SportsTop from './components/SportsTop'
-import TechnologyFull from './components/TechnologyFull'
-import TechnologyTop from './components/TechnologyTop'
-import TravelFull from './components/TravelFull'
-import TravelTop from './components/TravelTop'
-import WorldFull from './components/WorldFull'
-import WorldTop from './components/WorldTop'
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       picks: [],
-      sectionHealth: [],
-      sectionTravel: [],
-      sectionSports: [],
-      sectionHealth: [],
-      sectionTravel: [],
-      sectionSports: [],
-      sectionHealth: [],
-      sectionTravel: [],
-      sectionSports: [],
-      sectionHealth: [],
+      sectionArt: {pick: false,
+                      data: [],
+                      display: false},
+      sectionBusiness: {pick: false,
+                      data: [],
+                      display: false},
+      sectionFashion: {pick: false,
+                      data: [],
+                      display: false},
+      sectionHealth: {pick: false,
+                      data: [],
+                      display: false},
+      sectionPolitics: {pick: false,
+                      data: [],
+                      display: false},
+      sectionScience: {pick: false,
+                      data: [],
+                      display: false},
+      sectionSports: {pick: false,
+                      data: [],
+                      display: false},
+      sectionTechnology: {pick: false,
+                      data: [],
+                      display: false},
+      sectionTravel: {pick: false,
+                      data: [],
+                      display: false},
+      sectionWorld: {pick: false,
+                      data: [],
+                      display: false
+      },
     }
     this.getNews = this.getNews.bind(this);
   }
  
 
   async getNews() {
+    let newsArt;
+    let newsBusiness;
+    let newsFashion;
     let newsHealth;
-    let newsTravel;
+    let newsPolitics;
+    let newsScience;
     let newsSports;
+    let newsTechnology;
+    let newsTravel;
+    let newsWorld;
+    newsArt = await axios.get('/art');
+    newsBusiness = await axios.get('/business');
+    newsFashion = await axios.get('/fashion');
     newsHealth = await axios.get('/health');
-    newsTravel = await axios.get('/travel');
+    newsPolitics = await axios.get('/politics');
+    newsScience = await axios.get('/science');
     newsSports = await axios.get('/sports');
-    console.log(newsHealth);
-    console.log(newsTravel);
-    console.log(newsSports);
-    this.setState({sectionSports: newsHealth});
-    this.setState({sectionTravel: newsTravel});
-    this.setState({sectionSports: newsSports});
-  }
+    newsTechnology = await axios.get('/technology');
+    newsTravel = await axios.get('/travel');
+    newsWorld = await axios.get('/world');
+
+    newsArt = newsSports.data.results
+    newsBusiness = newsBusiness.data.results
+    newsFashion = newsFashion.data.results
+    newsHealth = newsHealth.data.results
+    newsPolitics = newsPolitics.data.results
+    newsScience = newsScience.data.results
+    newsSports = newsSports.data.results
+    newsTechnology = newsTechnology.data.results
+    newsTravel = newsTravel.data.results
+    newsWorld = newsWorld.data.results
+
+    this.setState({sectionSports: newsSports,
+                  sectionArt: newsArt,
+                  sectionBusiness: newsBusiness,
+                  sectionHealth: newsHealth,
+                  sectionPolitics: newsPolitics,
+                  sectionScience: newsScience,
+                  sectionSports: newsSports,
+                  sectionTechnology: newsTechnology,
+                  sectionTravel: newsTravel,
+                  sectionWorld: newsWorld            
+                });
+              }
 
   render() {
     return (
       <div className="App">
       <Form />
-        {/* <ul>
-          <li onClick={this.getNews}>
-          Hello World
-          </li>
-        </ul> */}
+      <a onClick={this.getNews}>Hello World</a>
+      {/* {this.state.sectionSports.map((article) => {
+       return ( 
+       <ul>
+         <li>
+           {article.title}
+         </li>
+        </ul>
+       )
+      })} */}
       </div>
     );
   }
