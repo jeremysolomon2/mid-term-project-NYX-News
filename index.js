@@ -28,15 +28,15 @@ app.get('/', (req, res) => {
 //   })
 // }
 
-app.get('/art', (req, res) => {
-    const url = `${NYT_API_BASE}art.json?api-key=${NYT_API_KEY}`
+app.get('/arts', (req, res) => {
+    const url = `${NYT_API_BASE}arts.json?api-key=${NYT_API_KEY}`
     axios.get(url)
     .then((api_response) => {
         res.send(api_response.data)
     })
   })
 
-  app.get('/business', (req, res) => {
+  app.get('/business', async (req, res) => {
     const url = `${NYT_API_BASE}business.json?api-key=${NYT_API_KEY}`
     axios.get(url)
     .then((api_response) => {
@@ -44,7 +44,7 @@ app.get('/art', (req, res) => {
     })
   })
 
-  app.get('/fashion', (req, res) => {
+  app.get('/fashion', async (req, res) => {
     const url = `${NYT_API_BASE}fashion.json?api-key=${NYT_API_KEY}`
     axios.get(url)
     .then((api_response) => {

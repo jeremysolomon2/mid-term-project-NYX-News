@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 
 let picks = [];
 
 class Form extends Component {
 
-  
+
 
   render() {
     return (

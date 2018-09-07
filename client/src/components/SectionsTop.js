@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class AllNews extends Component {
+export default class SectionsTop extends Component {
     constructor() {
         super()
         this.state = {
@@ -24,7 +24,7 @@ export default class AllNews extends Component {
                 <h1>{`${this.props.picks} Section`}</h1>
                 <ul>
                     {
-                        this.state.articles.map((article, i) => {
+                        this.state.articles.slice(0,3).map((article, i) => {
                             return(
                                 <div key = {`article-title-${i}`}>
                                     <li>{article.title}</li>
@@ -41,3 +41,4 @@ export default class AllNews extends Component {
         )
     }
 }
+
