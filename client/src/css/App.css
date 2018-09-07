@@ -1,3 +1,6 @@
+
+
+
 .show {
     display: show;
 }
@@ -5,3 +8,29 @@
 .hidden {
     display: none;
 }
+
+.cats {
+    font-size: 30px;
+    text-align: center;
+}
+
+.cats img{
+    width: 300px;
+   
+}
+
+
+
+.navbar-logo img{
+    width: 300px;
+    
+    
+
+}
+
+
+#home {
+    
+    background-color: goldenrod;
+  }
+  

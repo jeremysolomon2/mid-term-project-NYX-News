@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 import TopNews from './components/TopNews'
 import AllNews from './components/AllNews'
 import Header from './components/Header'
+import Home from './components/Home'
 import './css/App.css'
 // import { ENETDOWN } from 'constants';
 
@@ -107,9 +108,16 @@ class App extends Component {
 
   render() {
     return (
+
+
+
+
+      
       <BrowserRouter>
-        <div>
-          <Header />
+        <div class="cats">
+        
+        <Home />
+        <img src="/sitelogo.png"/>
           <div className={this.state.displayForm} >
             <div>
               <span onClick={ () => {if (picks.length < 3) {picks.push("Art"); console.log(picks);}} }>Arts</span>
@@ -139,6 +147,9 @@ class App extends Component {
         </div>
       </BrowserRouter>
     );
+
+
+
   }
 }
 
