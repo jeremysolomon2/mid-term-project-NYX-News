@@ -5,16 +5,21 @@ export default class AllNews extends Component {
     constructor() {
         super()
         this.state = {
-            articles: []
+            articles: [],
+            url: ''
         }
         
     }
 
     async componentDidMount() {
+        let url;
         let articles;
-        // articles = await axios.get(`./${this.props.picks}`)
-        articles = await axios.get(`./health`)
-
+        console.log(window.location)
+        url = window.location.search.slice(3)
+        this.setState({url})
+        console.log(this.state.url)
+        console.log(window.location.search.slice(3))
+        articles = await axios.get(`./${window.location.search.slice(3)}`)
         articles = articles.data.results
         this.setState({articles})
         console.log(this.state.articles)
@@ -23,17 +28,15 @@ export default class AllNews extends Component {
     render() {
         return (
             <div>
-                {/* <h1>{`${this.props.picks} Section`}</h1> */}
-                <h1>{`Health Section`}</h1>
+                <h1>{`${window.location.search.slice(3)} Section`}</h1>
 
                 <ul>
                     {
                         this.state.articles.map((article, i) => {
                             return(
                                 <div key = {`article-title-${i}`}>
+                                    <li><a href={article.url} target="_blank"><img src={article.multimedia[1].url}></img></a></li>
                                     <li>{article.title}</li>
-                                    <li>{article.url}</li>
-                                    <li>{article.multimedia[1].url}</li>
                                 </div>
                             )
                         })

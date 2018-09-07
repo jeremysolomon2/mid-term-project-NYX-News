@@ -135,7 +135,8 @@ class App extends Component {
           </div>
 
           <Route path="/topnews" component={() => <TopNews picks={picks} />}></Route> 
-          <Route path="/allnews" component={() => <AllNews />}></Route> 
+          <Route path="/allnews" component={() => <AllNews />}></Route>     
+
         </div>
       </BrowserRouter>
     );
