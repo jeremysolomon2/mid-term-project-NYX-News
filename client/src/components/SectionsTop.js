@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AllNews from './AllNews'
+import { BrowserRouter, Route, Link} from 'react-router-dom';
+
 
 export default class SectionsTop extends Component {
     constructor() {
@@ -35,7 +38,9 @@ export default class SectionsTop extends Component {
                         })
                     }
                 </ul>
-                <p>{`More ${this.props.picks} News`}</p>
+                {/* <p>{`More ${this.props.picks} News`}</p> */}
+                <Link  to="/allnews">{`More ${this.props.picks} News`}</Link>
+
             </div>
 
         )

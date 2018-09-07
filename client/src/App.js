@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 // import axios from 'axios';
 import TopNews from './components/TopNews'
-// import AllNews from './components/AllNews'
+import AllNews from './components/AllNews'
 import Header from './components/Header'
 import './css/App.css'
 // import { ENETDOWN } from 'constants';
@@ -101,7 +101,7 @@ class App extends Component {
   //               console.log(this.state.sectionArt)
   //             }
     
-    toggleDisplay(event) {
+    toggleDisplay() {
       this.setState({displayForm: 'hidden'})
     }
 
@@ -133,7 +133,9 @@ class App extends Component {
             </div>
             <Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link>
           </div>
+
           <Route path="/topnews" component={() => <TopNews picks={picks} />}></Route> 
+          <Route path="/allnews" component={() => <AllNews />}></Route> 
         </div>
       </BrowserRouter>
     );
