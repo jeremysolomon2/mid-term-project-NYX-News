@@ -34,10 +34,8 @@ export default class SectionsTop extends Component {
                                 this.state.articles.slice(0,3).map((article, i) => {
                                     return(
                                         <div key = {`article-title-${i}`}>
-                                            <li><img src={article.multimedia[1].url}></img></li>
-                                            <li>{article.title}</li>
-                                            <li>{article.url}</li>
-                                        
+                                            <li><a href={article.url} target="_blank"><img src={article.multimedia[1].url}></img></a></li>
+                                            <li>{article.title}</li>                                        
                                         </div>
                                     )
                                 })

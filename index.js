@@ -12,22 +12,6 @@ app.get('/', (req, res) => {
   res.send('hello world!')
 })
 
-// let sampleSelctions = ["sports","health","travel"]
-
-// app.get('/:test', (req, res) => {
-//   getNews(req.params.test, res)
-// })
-// // THIS WORKS
-// const getNews = (section, res) => {
-//   const url = `${NYT_API_BASE}${section}.json?api-key=${NYT_API_KEY}`
-//   axios.get(url).then(api_response => {
-//     res.send(api_response.data)
-//   }).catch(api_error => {
-//     console.log(api_error)
-//     res.send('error!')
-//   })
-// }
-
 app.get('/arts', (req, res) => {
     const url = `${NYT_API_BASE}arts.json?api-key=${NYT_API_KEY}`
     axios.get(url)
