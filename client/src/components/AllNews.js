@@ -12,9 +12,7 @@ export default class AllNews extends Component {
 
     async componentDidMount() {
         let articles;
-        // articles = await axios.get(`./${this.props.picks}`)
-        articles = await axios.get(`./health`)
-
+        articles = await axios.get(`./${this.props.picks}`)
         articles = articles.data.results
         this.setState({articles})
         console.log(this.state.articles)
@@ -26,7 +24,8 @@ export default class AllNews extends Component {
                 {/* <h1>{`${this.props.picks} Section`}</h1> */}
                 <h1>{`Health Section`}</h1>
 
-                <ul>
+
+                
                     {
                         this.state.articles.map((article, i) => {
                             return(
@@ -38,7 +37,7 @@ export default class AllNews extends Component {
                             )
                         })
                     }
-                </ul>
+               
             </div>
 
         )

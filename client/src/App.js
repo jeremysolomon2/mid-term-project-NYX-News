@@ -6,10 +6,12 @@ import AllNews from './components/AllNews'
 import Header from './components/Header'
 import Home from './components/Home'
 import './css/App.css'
+
 // import { ENETDOWN } from 'constants';
 
 
 let picks = [];
+
 
 class App extends Component {
   constructor() {
@@ -109,48 +111,67 @@ class App extends Component {
   render() {
     return (
 
+<div><Home />
 
 
-
-      
+     
       <BrowserRouter>
-        <div class="cats">
-        
-        <Home />
-        <img src="/sitelogo.png"/>
-          <div className={this.state.displayForm} >
+      
+        <div className='home-container'>
+     
+        {/* <img src="/sitelogo.png"/> */}
+          <div className={this.state.displayForm}>
+            
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Art"); console.log(picks);}} }>Art</span>
+
+
+
+             <li><span onClick={ () => {if (picks.length < 4) {picks.push("Business"); console.log(picks);}} }>Business</span></li>
+             <li> <span onClick={ () => {if (picks.length < 4) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span></li>
+             <li> <span onClick={ () => {if (picks.length < 4) {picks.push("Health"); console.log(picks);}} }>Health</span></li>
+             
+             
+             
+            
             <div>
-              <span onClick={ () => {if (picks.length < 3) {picks.push("Art"); console.log(picks);}} }>Arts</span>
-              <span onClick={ () => {if (picks.length < 3) {picks.push("Business"); console.log(picks);}} }>Business</span>
+              <span onClick={ () => {if (picks.length < 4) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span>
+              <span onClick={ () => {if (picks.length < 4) {picks.push("Health"); console.log(picks);}} }>Health</span>
             </div>
+            
             <div>
-              <span onClick={ () => {if (picks.length < 3) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span>
-              <span onClick={ () => {if (picks.length < 3) {picks.push("Health"); console.log(picks);}} }>Health</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Politics"); console.log(picks);}} }>Politics</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Science"); console.log(picks);}} }>Science</span>
             </div>
+
             <div>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Politics"); console.log(picks);}} }>Politics</span>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Science"); console.log(picks);}} }>Science</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Sports"); console.log(picks);}} }>Sports</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Technology"); console.log(picks);}} }>Technology</span>
             </div>
+
             <div>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Sports"); console.log(picks);}} }>Sports</span>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Technology"); console.log(picks);}} }>Technology</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("Travel"); console.log(picks);}} }>Travel</span>
+            <span onClick={ () => {if (picks.length < 4) {picks.push("World"); console.log(picks);}} }>World</span>
             </div>
-            <div>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Travel"); console.log(picks);}} }>Travel</span>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("World"); console.log(picks);}} }>World</span>
+            
+            
+            <div class="sec sec-three">
+            <button class="btn btn-three"><Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link></button>
             </div>
-            <Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link>
+            
+            
+            
           </div>
 
           <Route path="/topnews" component={() => <TopNews picks={picks} />}></Route> 
           <Route path="/allnews" component={() => <AllNews />}></Route> 
         </div>
-      </BrowserRouter>
+      </BrowserRouter></div>
     );
 
 
 
   }
+
 }
 
 export default App;
