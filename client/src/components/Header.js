@@ -4,8 +4,9 @@ class Header extends Component {
 
   render() {
     return (
+
       <div class="navbar-logo">
-       <img src="/sitelogo2.png"/>
+       <a href="/"><img src="/sitelogo2.png"/></a>
       </div>
     );
   }
