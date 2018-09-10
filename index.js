@@ -36,7 +36,7 @@ app.get('/arts', (req, res) => {
     })
   })
 
-  app.get('/business', async (req, res) => {
+  app.get('/business', (req, res) => {
     const url = `${NYT_API_BASE}business.json?api-key=${NYT_API_KEY}`
     axios.get(url)
     .then((api_response) => {
@@ -44,7 +44,7 @@ app.get('/arts', (req, res) => {
     })
   })
 
-  app.get('/fashion', async (req, res) => {
+  app.get('/fashion', (req, res) => {
     const url = `${NYT_API_BASE}fashion.json?api-key=${NYT_API_KEY}`
     axios.get(url)
     .then((api_response) => {
