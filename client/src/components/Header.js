@@ -5,7 +5,8 @@ class Header extends Component {
   render() {
     return (
       <div>
-        JAB NEWS!
+       <a href="/">JAB NEWS!</a>
+
       </div>
     );
   }
