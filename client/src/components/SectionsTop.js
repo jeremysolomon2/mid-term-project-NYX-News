@@ -27,7 +27,7 @@ export default class SectionsTop extends Component {
         return (           
             <div className="outside-box">
 
-                <div classList={sectionClasses}>
+                <div classlist={sectionClasses}>
                     <span>{`${this.props.picks.toUpperCase()}`}</span>
                 </div>
 

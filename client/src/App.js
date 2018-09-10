@@ -18,92 +18,9 @@ class App extends Component {
     super();
     this.state = {
       displayForm: 'show',
-      // sectionArt: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // sectionBusiness: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // sectionFashion: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // sectionHealth: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // sectionPolitics: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // sectionScience: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // // sectionSports: {pick: false,
-      // //                 data: [],
-      // //                 display: false},
-      // sectionTechnology: {pick: false,
-      //                 data: [],
-      //                 display: false},
-      // // sectionTravel: {pick: false,
-      // //                 data: [],
-      // //                 display: false},
-      // sectionWorld: {pick: false,
-      //                 data: [],
-      //                 display: false
-      // },
     }
   }
  
-
-  // async componentDidMount() {
-
-  //   let newsArt;
-  //   let newsBusiness;
-  //   let newsFashion;
-  //   let newsHealth;
-  //   let newsPolitics;
-  //   let newsScience;
-  //   let newsSports;
-  //   let newsTechnology;
-  //   let newsTravel;
-  //   let newsWorld;
-  //   newsArt = await axios.get('/arts');
-  //   newsBusiness = await axios.get('/business');
-  //   newsFashion = await axios.get('/fashion');
-  //   newsHealth = await axios.get('/health');
-  //   newsPolitics = await axios.get('/politics');
-  //   newsScience = await axios.get('/science');
-  //   // newsSports = await axios.get('/sports');
-  //   newsTechnology = await axios.get('/technology');
-  //   // newsTravel = await axios.get('/travel');
-  //   newsWorld = await axios.get('/world');
-
-  //   newsArt = newsArt.data.results
-  //   newsBusiness = newsBusiness.data.results
-  //   newsFashion = newsFashion.data.results
-  //   newsHealth = newsHealth.data.results
-  //   newsPolitics = newsPolitics.data.results
-  //   newsScience = newsScience.data.results
-  //   // newsSports = newsSports.data.results
-  //   newsTechnology = newsTechnology.data.results
-  //   // newsTravel = newsTravel.data.results
-  //   newsWorld = newsWorld.data.results
-
-  //   this.setState({
-  //                 sectionArt: {data: newsArt},
-  //                 sectionBusiness: {data: newsBusiness},
-  //                 sectionFashion: {data: newsFashion},
-  //                 sectionHealth: {data: newsHealth},
-  //                 sectionPolitics: {data: newsPolitics},
-  //                 sectionScience: {data: newsScience},
-  //                 // sectionSports: {data: newsSports},
-  //                 sectionTechnology: {data: newsTechnology},
-  //                 // sectionTravel: {data: newsTravel},
-  //                 sectionWorld: {data: newsWorld}            
-  //               });
-  //               console.log("hello")
-  //               // console.log(this.state.sectionTravel)
-  //               console.log(this.state.sectionArt)
-  //             }
-    
     toggleDisplay() {
       this.setState({displayForm: 'hidden'})
     }
@@ -150,8 +67,8 @@ class App extends Component {
               <span onClick={ () => {if (picks.length < 4) {picks.push("Travel"); console.log(picks);}} }>Travel</span>
               <span onClick={ () => {if (picks.length < 4) {picks.push("World"); console.log(picks);}} }>World</span>
             </div>
-            <div class="sec sec-three">
-              <button class="btn btn-three"><Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link></button>
+            <div className="sec sec-three">
+              <button className="btn btn-three"><Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link></button>
             </div>
           </div>
 
