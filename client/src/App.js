@@ -111,6 +111,7 @@ class App extends Component {
         <div>
           <Header />
           <div className={this.state.displayForm} >
+            <h3>Pick 3!</h3>
             <div>
               <span onClick={ () => {if (picks.length < 3) {picks.push("Arts"); console.log(picks);}} }>Arts</span>
               <span onClick={ () => {if (picks.length < 3) {picks.push("Business"); console.log(picks);}} }>Business</span>
