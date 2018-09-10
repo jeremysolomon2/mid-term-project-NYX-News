@@ -14,6 +14,8 @@ export default class AllNews extends Component {
     async componentDidMount() {
         let url;
         let articles;
+
+
         console.log(window.location)
         url = window.location.search.slice(3)
         this.setState({url})
@@ -21,6 +23,7 @@ export default class AllNews extends Component {
         console.log(window.location.search.slice(3))
         articles = await axios.get(`./${window.location.search.slice(3)}`)
         articles = articles.data.results.filter(art => {if(art.multimedia.length > 0) return art});
+
         this.setState({articles})
         console.log(this.state.articles)
     }
@@ -30,7 +33,8 @@ export default class AllNews extends Component {
             <div>
                 <h1>{`${window.location.search.slice(3)} Section`}</h1>
 
-                <ul>
+
+                
                     {
                         this.state.articles.map((article, i) => {
                             console.log('Article', article.url);
@@ -42,7 +46,7 @@ export default class AllNews extends Component {
                             )
                         })
                     }
-                </ul>
+               
             </div>
 
         )

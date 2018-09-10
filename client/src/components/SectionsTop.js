@@ -19,34 +19,37 @@ export default class SectionsTop extends Component {
         articles = await axios.get(`./${this.props.picks}`)
         articles = articles.data.results
         this.setState({articles})
-        // console.log(this.state.articles)
     }
 
     
     render() {
-        return (
-         
-                <div>
-                    <div className={this.state.display} >
-                        <h1>{`${this.props.picks} Section`}</h1>
-                        <ul>
-                            {
-                                this.state.articles.slice(0,3).map((article, i) => {
-                                    return(
-                                        <div key = {`article-title-${i}`}>
-                                            <li><a href={article.url} target="_blank"><img src={article.multimedia[1].url}></img></a></li>
-                                            <li>{article.title}</li>                                        
-                                        </div>
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
-                    <Link  to={`/allnews?p=${this.props.picks}`}>{`More ${this.props.picks} News`}</Link>
-                   
-                </div>
-           
+        let sectionClasses = [this.state.display , "section"] 
+        return (           
+            <div className="outside-box">
 
+                <div classList={sectionClasses}>
+                    <span>{`${this.props.picks.toUpperCase()}`}</span>
+                </div>
+
+
+                <div className='grid-container'>{this.state.articles.slice(0,3).map((article, i) => {
+                    return(
+                            <div key = {`article-title-${i}`} className="card">
+                                <img className="card-img-top" src={article.multimedia[4].url} alt="No image provided"/>
+                                <p className ="card-title">{article.title}</p>
+                                <p className ="card-body">{article.abstract}</p>
+                                <div className="click-more">
+                                    <a href={article.url} className="btn btn-warning"> Continue Reading</a>
+                                </div>
+                            </div>
+                            )
+                    })}
+                </div>
+
+                <div className="btn btn-warning">
+                    <Link to="/allnews">{`More ${this.props.picks} News`}</Link>
+                </div>
+            </div>
         )
     }
 }
