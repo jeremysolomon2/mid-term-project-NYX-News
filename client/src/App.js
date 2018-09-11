@@ -16,13 +16,13 @@ class App extends Component {
     this.pushPicks = this.pushPicks.bind(this);
   }
  
-    pushPicks(section){
-      if (this.state.picks.length < 3) {
-      let joined = this.state.picks.concat(section);
-      this.setState({ picks: joined })
-      // console.log(this.state.picks);
-      };
+  pushPicks(section){
+    if (this.state.picks.length < 3) {
+    let joined = this.state.picks.concat(section);
+    this.setState({ picks: joined })
+    // console.log(this.state.picks);
     };
+  };
 
   render() {
     return (

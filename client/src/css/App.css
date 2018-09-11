@@ -17,8 +17,8 @@
 .home-container { 
     position: absolute;
     display:inline;
-    width:250px;
-    height: 350px;
+    width:275px;
+    height: 375px;
     padding:15px 25px;
     left: 50%;
     top: 50%;
@@ -31,49 +31,31 @@
     list-style: none;
 }
 
-.btn-btn-warning {
-  font-size: 15px;
-  /* padding: 10px; */
+.invert-color{
+  background-color: limegreen;
+  color: hotpink;
 }
-  
-/* THIRD BUTTON */
-/* .sec-three{
-    
-  } */
-  /* .btn-three{
-    display:inline;
-   
-    padding:1px 1px;
-    border:5px solid #666666;
-    border-radius:5px;
-    color:#666666;
-    font-size:20px;
-    transition:color 0.5s ease, width 0.3s ease, border 0.5s ease;
-  } */
-/* 
-  .btn-three:hover{
-    color:#010101;
-    border-color:#010101;
-    width:190px;
-  }
-  .btn-three:after{
-    content:"››";
-    position:absolute;
-    display:inline;
-    visibility:hidden;
-    opacity:0;
-    margin:0;
-    padding:0;
-    line-height:0em;
-    font-size:50px;
-    transition: all 0.2s ease;
-  }
-  .btn-three:hover:after{
-    opacity:1;
-    visibility: visible;
-    margin:0 0 0 20px;
-    transition: all 0.5s linear;
-  } */
+
+.home-container .btn {
+  width: 45%;
+  margin-bottom: 5px;
+}
+
+.home-container .btn:nth-of-type(odd) {
+  margin-right: 5px;
+}
+
+.button-one:hover{
+  background-color: purple;
+}
+
+.button-one:visited{
+  background-color: purple;
+}
+
+/* .home-container span {
+  padding: 52px  5px;
+} */
   
 .show {
     display: show;

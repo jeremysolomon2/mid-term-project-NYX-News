@@ -29,7 +29,6 @@ export default class AllNews extends Component {
         return (
             <div className="wrapper">
                 <Header /> 
-                
                 <div className="outside-box">
                 <div className="section">
                     <span>{window.location.search.slice(3)}</span>
