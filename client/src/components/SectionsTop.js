@@ -3,7 +3,6 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../css/SectionsTop.css'
 
-
 export default class SectionsTop extends Component {
     constructor() {
         super()
@@ -11,7 +10,6 @@ export default class SectionsTop extends Component {
             articles: [],
             display: 'show'
         }
-        
     }
 
     async componentDidMount() {
@@ -21,17 +19,13 @@ export default class SectionsTop extends Component {
         this.setState({articles})
     }
 
-    
     render() {
         let sectionClasses = [this.state.display , "section"] 
         return (           
             <div className="outside-box">
-
                 <div classlist={sectionClasses}>
                     <span>{`${this.props.picks.toUpperCase()}`}</span>
                 </div>
-
-
                 <div className='grid-container'>{this.state.articles.slice(0,3).map((article, i) => {
                     return(
                             <div key = {`article-title-${i}`} className="card">
@@ -45,7 +39,6 @@ export default class SectionsTop extends Component {
                             )
                     })}
                 </div>
-
                 <div className="btn btn-warning">
                     <Link  to={`/allnews?p=${this.props.picks}`}>{`More ${this.props.picks} News`}</Link>
                 </div>
