@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 import TopNews from './components/TopNews'
 import AllNews from './components/AllNews'
 import Header from './components/Header'
-import Home from './components/Home'
+// import Home from './components/Home'
 import './css/App.css'
 
 class App extends Component {
