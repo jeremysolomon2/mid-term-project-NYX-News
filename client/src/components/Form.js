@@ -9,9 +9,13 @@ class Form extends Component {
     return (
             
             <div className="home-container">
-            <Header />
-              <h3>Pick 3!</h3>
+            
+              
               <div>
+                <div className="form-logo">
+                  <img src="/sitelogo2.png" alt="na"></img>
+                </div>
+              <h3>Pick 3!</h3>
                 <span onClick={ () => {this.props.pushPicks('Arts')} }>Art</span>
                 <span onClick={ () => {this.props.pushPicks('Business')} }>Business</span> 
               </div>

@@ -26,22 +26,42 @@ export default class AllNews extends Component {
     }
 
     render() {
+        let sectionClasses = [this.state.display , "section"] 
         return (
-            <div>
+            <div className="wrapper">
                 <Header /> 
-                <h1>{`${window.location.search.slice(3)}`}</h1>
-                    {
+                
+                <div className="outside-box">
+                <div classlist={sectionClasses}>
+                    <span>{window.location.search.slice(3)}</span>
+                </div>
+
+                {/* <h1>{`${window.location.search.slice(3)}`}</h1> */}
+                   <div className='grid-container'> {
                         this.state.articles.map((article, i) => {
                             // console.log('Article', article.url);
                             return(
-                                <div key = {`article-title-${i}`}>
-                                    <p><a href={article.url} target="_blank"><img src={article.multimedia[1].url} alt="na"></img></a></p>
-                                    <p>{article.title}</p>
+                                <div key = {`article-title-${i}`} className="card">
+                                    <img className="card-img-top" src={article.multimedia[1].url} alt="na"/>
+                                    <p className ="card-title">{article.title}</p>
+                                    <p className ="card-body">{article.abstract}</p>
+                                    <div className="click-more">
+                                        <a href={article.url} className="btn btn-warning" target="_blank"> Continue Reading</a>
+                                    </div>
                                 </div>
                             )
                         })
                     }
+                    </div>
+                </div>
+                
             </div>
         )
     }
 }
+
+
+
+
+
+

@@ -20,20 +20,19 @@ export default class SectionsTop extends Component {
     }
 
     render() {
-        let sectionClasses = [this.state.display , "section"] 
         return (           
             <div className="outside-box">
-                <div classlist={sectionClasses}>
+                <div className="section">
                     <span>{`${this.props.picks.toUpperCase()}`}</span>
                 </div>
                 <div className='grid-container'>{this.state.articles.slice(0,3).map((article, i) => {
                     return(
                             <div key = {`article-title-${i}`} className="card">
-                                <img className="card-img-top" src={article.multimedia[1].url} alt="na"/>
+                                <img className="card-img-top" src={article.multimedia[4].url} alt="na"/>
                                 <p className ="card-title">{article.title}</p>
                                 <p className ="card-body">{article.abstract}</p>
                                 <div className="click-more">
-                                    <a href={article.url} className="btn btn-warning"> Continue Reading</a>
+                                    <a href={article.url} className="btn btn-warning" target="_blank"> Continue Reading</a>
                                 </div>
                             </div>
                             )
