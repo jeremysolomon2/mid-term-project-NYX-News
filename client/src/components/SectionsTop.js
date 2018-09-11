@@ -3,6 +3,10 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../css/SectionsTop.css'
 
+var white = {
+    color: "white"
+}
+
 export default class SectionsTop extends Component {
     constructor() {
         super()
@@ -32,14 +36,14 @@ export default class SectionsTop extends Component {
                                 <p className ="card-title">{article.title}</p>
                                 <p className ="card-body">{article.abstract}</p>
                                 <div className="click-more">
-                                    <a href={article.url} className="btn btn-warning" target="_blank"> Continue Reading</a>
+                                    <a href={article.url} className="btn btn-default" target="_blank"> Continue Reading</a>
                                 </div>
                             </div>
                             )
                     })}
                 </div>
-                <div className="btn btn-warning">
-                    <Link  to={`/allnews?p=${this.props.picks}`}>{`More ${this.props.picks} News`}</Link>
+                <div className="btn btn-primary">
+                    <Link style={white}  to={`/allnews?p=${this.props.picks}`}>{`More ${this.props.picks} News`}</Link>
                 </div>
             </div>
         )

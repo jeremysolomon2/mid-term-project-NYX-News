@@ -26,13 +26,12 @@ export default class AllNews extends Component {
     }
 
     render() {
-        let sectionClasses = [this.state.display , "section"] 
         return (
             <div className="wrapper">
                 <Header /> 
                 
                 <div className="outside-box">
-                <div classlist={sectionClasses}>
+                <div className="section">
                     <span>{window.location.search.slice(3)}</span>
                 </div>
 
@@ -46,7 +45,7 @@ export default class AllNews extends Component {
                                     <p className ="card-title">{article.title}</p>
                                     <p className ="card-body">{article.abstract}</p>
                                     <div className="click-more">
-                                        <a href={article.url} className="btn btn-warning" target="_blank"> Continue Reading</a>
+                                        <a href={article.url} className="btn btn-default" target="_blank"> Continue Reading</a>
                                     </div>
                                 </div>
                             )
