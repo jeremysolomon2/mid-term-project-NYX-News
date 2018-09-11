@@ -41,12 +41,10 @@ class App extends Component {
             {/* <Header ☹️ /> */}
 
             <h3>Pick 3!</h3>
-
-            <span onClick={ () => {if (picks.length < 4) {picks.push("Arts"); console.log(picks);}} }>Art</span>
-
-             <li><span onClick={ () => {if (picks.length < 4) {picks.push("Business"); console.log(picks);}} }>Business</span></li>
-             <li> <span onClick={ () => {if (picks.length < 4) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span></li>
-             <li> <span onClick={ () => {if (picks.length < 4) {picks.push("Health"); console.log(picks);}} }>Health</span></li>
+            <div>
+             <span onClick={ () => {if (picks.length < 4) {picks.push("Arts"); console.log(picks);}} }>Art</span>
+             <span onClick={ () => {if (picks.length < 4) {picks.push("Business"); console.log(picks);}} }>Business</span>
+            </div>
   
             <div>
               <span onClick={ () => {if (picks.length < 4) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span>
