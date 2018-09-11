@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
+import '../css/Form.css'
+import Header from './Header'
 
-
-let picks = [];
 
 class Form extends Component {
   render() {
     return (
-            <div>
+            
+            <div className="home-container">
+            <Header />
               <h3>Pick 3!</h3>
               <div>
                 <span onClick={ () => {this.props.pushPicks('Arts')} }>Art</span>

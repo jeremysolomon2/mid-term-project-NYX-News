@@ -20,23 +20,24 @@ class App extends Component {
       if (this.state.picks.length < 3) {
       let joined = this.state.picks.concat(section);
       this.setState({ picks: joined })
-      console.log(this.state.picks);
+      // console.log(this.state.picks);
       };
     };
 
   render() {
     return (
             <div>
-                  <Header />
+                  {/* <Header /> */}
                   <BrowserRouter>
                     <div>
                       <Route exact path="/" component = {() => <Form pushPicks={this.pushPicks} />} ></Route>
                       <Route path="/topnews" component={() => <TopNews picks={this.state.picks} />}></Route> 
                       <Route path="/allnews" component={() => <AllNews />}></Route>     
                     </div>
-                  </BrowserRouter></div>
-                );
-              }
+                  </BrowserRouter>
+            </div>
+            );
+        }
 }
 
 export default App;

@@ -1,14 +1,17 @@
-
+/* Applies to all pages of app */
 * {
     box-sizing: border-box;
   }
 
-#home {
-    background-color: #f58c04
+  body {
+    margin: 0;
+    background-color:white;
+    background-image: url('https://darrinseathphotography.files.wordpress.com/2012/05/timessquare18.jpg');
+    background-size: 100%;   
 }
 
-.home-container {
-    position: absolute;
+.home-container { 
+    /* position: absolute;
     display:inline;
     width:250px;
     height: 350px;
@@ -18,9 +21,9 @@
     transform: translate(-50%, -50%);
     background:black;
    
-    color: white;
+    color: white; */
     text-align: center;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); */
     list-style: none;
 }
 
@@ -32,7 +35,7 @@
 /* .sec-three{
     
   } */
-  .btn-three{
+  /* .btn-three{
     display:inline;
    
     padding:1px 1px;
@@ -41,7 +44,8 @@
     color:#666666;
     font-size:20px;
     transition:color 0.5s ease, width 0.3s ease, border 0.5s ease;
-  }
+  } */
+/* 
   .btn-three:hover{
     color:#010101;
     border-color:#010101;
@@ -64,7 +68,7 @@
     visibility: visible;
     margin:0 0 0 20px;
     transition: all 0.5s linear;
-  }
+  } */
   
 .show {
     display: show;
@@ -126,12 +130,7 @@ background-position: fixed;
     color: black;
   }
 
-  body {
-    margin: 0;
-    background-color:white;
-    background-image: url('https://darrinseathphotography.files.wordpress.com/2012/05/timessquare18.jpg');
-    background-size: 100%;   
-}
+
   
 .section span {
     font-family:'DIN Condensed', sans-serif;
