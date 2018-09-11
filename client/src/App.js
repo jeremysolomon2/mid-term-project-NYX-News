@@ -22,7 +22,6 @@ class App extends Component {
   render() {
     return (
             <div>
-              {/* <Home /> */}
                   <Header />
                   <BrowserRouter>
                     <div className='home-container'>
