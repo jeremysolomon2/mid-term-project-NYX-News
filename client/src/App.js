@@ -21,14 +21,12 @@ class App extends Component {
 
   render() {
     return (
-
-            <div><Home />
+            <div>
+              {/* <Home /> */}
                   <Header />
                   <BrowserRouter>
                     <div className='home-container'>
-                    {/* <img src="/sitelogo.png"/> */}
                       <div className={this.state.displayForm}>
-                        {/* <Header ☹️ /> */}
                         <h3>Pick 3!</h3>
                         <div>
                         <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Arts"); console.log(this.state.picks);}} }>Art</span>
