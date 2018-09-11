@@ -29,7 +29,7 @@ export default class SectionsTop extends Component {
                 <div className='grid-container'>{this.state.articles.slice(0,3).map((article, i) => {
                     return(
                             <div key = {`article-title-${i}`} className="card">
-                                <img className="card-img-top" src={article.multimedia[1].url} alt="No image provided"/>
+                                <img className="card-img-top" src={article.multimedia[1].url} alt="na"/>
                                 <p className ="card-title">{article.title}</p>
                                 <p className ="card-body">{article.abstract}</p>
                                 <div className="click-more">

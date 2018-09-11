@@ -13,11 +13,20 @@ class App extends Component {
       displayForm: 'show',
       picks: []
     }
+    this.pushPicks = this.pushPicks.bind(this);
   }
  
+    pushPicks(section){
+      if (this.state.picks.length < 3) {
+      let joined = this.state.picks.concat(section);
+      this.setState({ picks: joined })
+      console.log(this.state.picks);
+      };
+    };
+
     toggleDisplay() {
       this.setState({displayForm: 'hidden'})
-    }
+    };
 
   render() {
     return (
@@ -28,24 +37,24 @@ class App extends Component {
                       <div className={this.state.displayForm}>
                         <h3>Pick 3!</h3>
                         <div>
-                        <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Arts"); console.log(this.state.picks);}} }>Art</span>
-                        <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Business"); console.log(this.state.picks);}} }>Business</span>
+                          <span onClick={ () => {this.pushPicks('Arts')} }>Art</span>
+                          <span onClick={ () => {this.pushPicks('Business')} }>Business</span> 
                         </div>
                         <div>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Fashion"); console.log(this.state.picks);}} }>Fashion</span>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Health"); console.log(this.state.picks);}} }>Health</span>
+                          <span onClick={ () => {this.pushPicks('Fashion')} }>Fashion</span>
+                          <span onClick={ () => {this.pushPicks('Health')} }>Health</span> 
                         </div>
                         <div>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Politics"); console.log(this.state.picks);}} }>Politics</span>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Science"); console.log(this.state.picks);}} }>Science</span>
+                          <span onClick={ () => {this.pushPicks('Politics')} }>Politics</span>
+                          <span onClick={ () => {this.pushPicks('Science')} }>Science</span> 
                         </div>
                         <div>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Sports"); console.log(this.state.picks);}} }>Sports</span>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Technology"); console.log(this.state.picks);}} }>Technology</span>
+                          <span onClick={ () => {this.pushPicks('Sports')} }>Sports</span>
+                          <span onClick={ () => {this.pushPicks('Technology')} }>Technology</span> 
                         </div>
                         <div>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("Travel"); console.log(this.state.picks);}} }>Travel</span>
-                          <span onClick={ () => {if (this.state.picks.length < 3) {this.state.picks.push("World"); console.log(this.state.picks);}} }>World</span>
+                          <span onClick={ () => {this.pushPicks('Travel')} }>Travel</span>
+                          <span onClick={ () => {this.pushPicks('World')} }>World</span> 
                         </div>
                         <div className="sec sec-three">
                           <button className="btn btn-three"><Link onClick={this.toggleDisplay.bind(this)} to="/topnews">Next</Link></button>

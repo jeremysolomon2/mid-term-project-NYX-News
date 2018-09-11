@@ -34,7 +34,7 @@ export default class AllNews extends Component {
                             console.log('Article', article.url);
                             return(
                                 <div key = {`article-title-${i}`}>
-                                    <li><a href={article.url} target="_blank"><img src={article.multimedia[1].url}></img></a></li>
+                                    <li><a href={article.url} target="_blank"><img src={article.multimedia[1].url} alt="na"></img></a></li>
                                     <li>{article.title}</li>
                                 </div>
                             )
