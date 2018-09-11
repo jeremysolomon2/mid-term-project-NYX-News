@@ -1,40 +1,38 @@
 import React, { Component } from 'react';
+import { Link} from 'react-router-dom';
 
 
 let picks = [];
 
 class Form extends Component {
-
-
-
   render() {
     return (
-      <div>
-        <h3>Pick 3!</h3>
-        <form>
-          <div>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Art"); console.log(picks);}} }>Arts</span>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Business"); console.log(picks);}} }>Business</span>
-          </div>
-          <div>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Fashion"); console.log(picks);}} }>Fashion</span>
-            <span onClick={ () => {if (picks.length < 3) {picks.push("Health"); console.log(picks);}} }>Health</span>
-          </div>
-          <div>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("Politics"); console.log(picks);}} }>Politics</span>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("Science"); console.log(picks);}} }>Science</span>
-          </div>
-          <div>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("Sports"); console.log(picks);}} }>Sports</span>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("Technology"); console.log(picks);}} }>Technology</span>
-          </div>
-          <div>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("Travel"); console.log(picks);}} }>Travel</span>
-          <span onClick={ () => {if (picks.length < 3) {picks.push("World"); console.log(picks);}} }>World</span>
-          </div>
-          <input type="submit" value="Next"/> 
-        </form>
-      </div>
+            <div>
+              <h3>Pick 3!</h3>
+              <div>
+                <span onClick={ () => {this.props.pushPicks('Arts')} }>Art</span>
+                <span onClick={ () => {this.props.pushPicks('Business')} }>Business</span> 
+              </div>
+              <div>
+                <span onClick={ () => {this.props.pushPicks('Fashion')} }>Fashion</span>
+                <span onClick={ () => {this.props.pushPicks('Health')} }>Health</span> 
+              </div>
+              <div>
+                <span onClick={ () => {this.props.pushPicks('Politics')} }>Politics</span>
+                <span onClick={ () => {this.props.pushPicks('Science')} }>Science</span> 
+              </div>
+              <div>
+                <span onClick={ () => {this.props.pushPicks('Sports')} }>Sports</span>
+                <span onClick={ () => {this.props.pushPicks('Technology')} }>Technology</span> 
+              </div>
+              <div>
+                <span onClick={ () => {this.props.pushPicks('Travel')} }>Travel</span>
+                <span onClick={ () => {this.props.pushPicks('World')} }>World</span> 
+              </div>
+              <div className="sec sec-three">
+                <button className="btn btn-three"><Link to="/topnews">Next</Link></button>
+              </div>
+            </div>
     );
   }
 }
