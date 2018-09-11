@@ -17,7 +17,7 @@ export default class SectionsTop extends Component {
     async componentDidMount() {
         let articles;
         articles = await axios.get(`./${this.props.picks}`)
-        articles = articles.data.results
+        articles = articles.data.results.filter(art => {if(art.multimedia.length > 0) return art});
         this.setState({articles})
     }
 
@@ -35,7 +35,7 @@ export default class SectionsTop extends Component {
                 <div className='grid-container'>{this.state.articles.slice(0,3).map((article, i) => {
                     return(
                             <div key = {`article-title-${i}`} className="card">
-                                <img className="card-img-top" src={article.multimedia[4].url} alt="No image provided"/>
+                                <img className="card-img-top" src={article.multimedia[1].url} alt="No image provided"/>
                                 <p className ="card-title">{article.title}</p>
                                 <p className ="card-body">{article.abstract}</p>
                                 <div className="click-more">
@@ -47,7 +47,7 @@ export default class SectionsTop extends Component {
                 </div>
 
                 <div className="btn btn-warning">
-                    <Link to="/allnews">{`More ${this.props.picks} News`}</Link>
+                    <Link  to={`/allnews?p=${this.props.picks}`}>{`More ${this.props.picks} News`}</Link>
                 </div>
             </div>
         )

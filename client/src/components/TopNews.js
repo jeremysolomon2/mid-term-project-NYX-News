@@ -17,8 +17,6 @@ class TopNews extends Component {
             this.props.picks.map((pick, i) => {
                 return (
                     
-
-                  
                     <SectionsTop picks={pick} key={`section-${i}`}/>
                 )
                 

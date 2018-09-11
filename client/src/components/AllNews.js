@@ -22,6 +22,7 @@ export default class AllNews extends Component {
         console.log(this.state.url)
         console.log(window.location.search.slice(3))
         articles = await axios.get(`./${window.location.search.slice(3)}`)
+        console.log("articles",articles)
         articles = articles.data.results.filter(art => {if(art.multimedia.length > 0) return art});
 
         this.setState({articles})
