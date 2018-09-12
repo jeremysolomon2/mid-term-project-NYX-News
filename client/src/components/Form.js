@@ -6,22 +6,32 @@ import Header from './Header'
 
 class Form extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.pushForm = this.pushForm.bind(this)
   }
   
   pushForm(ev) {
-    console.log(ev.target)
+    console.log(ev.target.dataset.category)
     let category = ev.target.dataset.category
     ev.target.classList.remove("btn-warning")
     ev.target.classList.add("btn-primary")
-
-
     this.props.pushPicks(category)
   }
 
+  componentDidMount(prevProps, newProps){
+    console.log(this.props.picks)
+    this.props.picks.map((pick)=>{
+      if(pick == "Arts"){
+        this.myDiv.classList.remove("btn-warning");
+        this.myDiv.classList.add("btn-primary");
+      }
+    })
+  }
+
+
   render() {
+    console.log("I rendered")
     return (
             
             <div className="home-container">
@@ -30,7 +40,7 @@ class Form extends Component {
                   <img src="/sitelogo2.png" alt="na"></img>
                 </div>
               <h3>Pick 3!</h3>
-                <span className="btn btn-warning" onClick={ this.pushForm } data-category="Arts">Art</span>
+                <span ref={(ele) => this.myDiv = ele} className="btn btn-warning" onClick={ this.pushForm } data-category="Arts">Art</span>
                 <span className="btn btn-warning" onClick={ this.pushForm } data-category='Business'>Business</span> 
               </div>
               <div>
